@@ -1,5 +1,7 @@
 <!-- index.wxml -->
 <view class="container">
+<my-component class="ui-compontent"></my-component>
+    <my-music class="ui-compontent"></my-music>
     <!-- <web-view src="http://localhost:8090/huaxiang/fangzhouBVisual/web/"></web-view> -->
     <!-- <text class="demo-title">合法参数的API</text>
       <view class='demo-box'>
@@ -17,7 +19,7 @@
     <view class="header">
         <button bindtap="nextPage" hover-class="buttonHove">下一页</button>
         <button id="demo-box-API" class="API">合法参数的API(超级属性系列)</button>
-        <button bindtap="registerSuperProperty" hover-class="buttonHove">
+        <button bindtap="registerSuperProperty" hover-class="buttonHove" data-content="res" data-type="button" data-name="res" id="res1111111">
             registerSuperProperty
         </button>
         <button bindtap="registerSuperProperties" hover-class="buttonHove">

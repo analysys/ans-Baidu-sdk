@@ -5,31 +5,40 @@ import baseConfig from '../../../lib/baseConfig/index'
  */
 
 function getScene () {
-  return baseConfig.system.scene || ''
+    return baseConfig.system.scene || ''
 }
 /**
  * 返回包名
  * @returns {String} packageName 包名
  */
 function getPackageName () {
-  return ''
+    return ''
 }
 
 function getPath () {
-  let pathArray = getCurrentPages()
-  let path = pathArray[pathArray.length - 1].route
-  return path
+    let pathArray = getCurrentPages()
+    // 有时pathArray 为空数组  []
+    if (pathArray.length > 0) {
+        let path = pathArray[pathArray.length - 1].route
+        return path
+    }
 }
 
 function getTitle () {
-  return ''
+    return ''
 }
 
 function getReferer () {
-  let pathArray = getCurrentPages()
-  if (pathArray.length > 1) {
-    return '/' + pathArray[pathArray.length - 2].route
-  }
-  return getScene()
+    let pathArray = getCurrentPages()
+    if (pathArray.length > 1 && pathArray[pathArray.length - 2]) {
+        return '/' + pathArray[pathArray.length - 2].route
+    }
+    return getScene()
 }
-export { getScene, getPackageName, getPath, getTitle, getReferer }
+export {
+    getScene,
+    getPackageName,
+    getPath,
+    getTitle,
+    getReferer
+}

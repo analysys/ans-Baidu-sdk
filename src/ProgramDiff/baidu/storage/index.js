@@ -5,27 +5,27 @@
  */
 
 let getStoragePromise = function (name) {
-  return new Promise(function (resolve, reject) {
-    try {
-      let value = swan.getStorageSync(name)
-      if (value) {
-        resolve(value)
-      } else {
-        resolve({})
-      }
-    } catch (e) {
-      swan.getStorage({
-        key: name,
-        success: function (res) {
-          resolve(res.data)
-        },
-        fail: function (res) {
-          reject(res)
+    return new Promise(function (resolve, reject) {
+        try {
+            let value = swan.getStorageSync(name)
+            if (value) {
+                resolve(value)
+            } else {
+                resolve({})
+            }
+        } catch (e) {
+            swan.getStorage({
+                key: name,
+                success: function (res) {
+                    resolve(res.data)
+                },
+                fail: function (res) {
+                    reject(res)
+                }
+            })
         }
-      })
-    }
-  }).catch((e) => {
-  })
+    }).catch((e) => {
+    })
 }
 /**
  * [setStoragePromise description]设置存储
@@ -33,24 +33,24 @@ let getStoragePromise = function (name) {
  * @param {[type]} value [description]
  */
 let setStoragePromise = function (name, value) {
-  return new Promise(function (resolve, reject) {
-    let val = value
-    try {
-      swan.setStorageSync(name, val)
-      resolve(200)
-    } catch (e) {
-      swan.setStorage({
-        key: name,
-        data: val,
-        success: function () {
-          resolve(200)
-        },
-        fail: function () {
-          reject(400)
+    return new Promise(function (resolve, reject) {
+        let val = value
+        try {
+            swan.setStorageSync(name, val)
+            resolve(200)
+        } catch (e) {
+            swan.setStorage({
+                key: name,
+                data: val,
+                success: function () {
+                    resolve(200)
+                },
+                fail: function () {
+                    reject(400)
+                }
+            })
         }
-      })
-    }
-  }).catch((e) => {
-  })
+    }).catch((e) => {
+    })
 }
 export { getStoragePromise, setStoragePromise }

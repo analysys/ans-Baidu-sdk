@@ -1,7 +1,9 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/logs/logs"
+        "pages/logs/logs",
+        "components/myMovie/myMovie",
+        "components/myMusic/myMusic"
     ],
     "window": {
         "navigationBarBackgroundColor": "#ffffff",

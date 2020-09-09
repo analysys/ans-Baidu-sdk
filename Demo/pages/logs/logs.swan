@@ -2,7 +2,6 @@
 <view class="container">
     <view class="header">
         <button bindtap="prePage" hover-class="buttonHove">上一页</button>
-       
         <button bindtap="pageView" hover-class="buttonHove">pageView</button>
         <button bindtap="track" hover-class="buttonHove">track</button>
         <button bindtap="alias" hover-class="buttonHove">alias</button>
@@ -22,5 +21,6 @@
         <button bindtap="profileAppendArray" hover-class="buttonHove">profileAppend 列表类型属性</button>
         <button bindtap="profileUnset" hover-class="buttonHove">profileUnset</button>
         <button bindtap="profileDelete" hover-class="buttonHove">profileDelete</button>
+        <button type="primary" open-type="share" hover-stop-propagation="true">分享</button>
     </view>
 </view>
